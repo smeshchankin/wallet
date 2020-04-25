@@ -30,6 +30,7 @@ h1, h2, h3 {
     margin-top: 30px;
     width: 250px;
 }
+
 .total {
     padding: 20px;
     background-color: #fff;
@@ -69,3 +70,41 @@ h1, h2, h3 {
     color: tomato;
 }
 
+.history {
+    margin-top: 40px;
+}
+.history__item {
+    align-items: center;
+    background-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-left: 10px solid;
+    border-right: 10px solid;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+}
+.history__item-plus {
+    border-left-color:  darkgreen;
+    border-right-color: darkgreen;
+}
+.history__item-minus {
+    border-left-color:  tomato;
+    border-right-color: tomato;
+}
+.history__delete {
+    background-color: transparent;
+    color: red;
+    padding: 0 10;
+    border-width: 0;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+.history__item:hover .history__delete {
+    opacity: 1;
+}
