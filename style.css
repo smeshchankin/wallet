@@ -154,3 +154,9 @@ ul {
     background-color: white;
     color: darkorange;
 }
+
+@media(max-width: 667px) {
+    .container {
+        width: 90%;
+    }
+}
