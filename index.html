@@ -16,25 +16,25 @@
         <section class="total">
             <header class="total__header">
                 <h3>Balance</h3>
-                <span class="total__balance">$&nbsp;0</span>
+                <span id="balance" class="total__balance">$&nbsp;0</span>
             </header>
             <div class="total__main">
                 <div class="total__main-item">
                     <h4>Income</h4>
-                    <span class="total__money total__money-income">$&nbsp;0</span>
+                    <span id="income" class="total__money total__money-income">$&nbsp;0</span>
                 </div>
                 <div class="total__main-item">
                     <h4>Expenses</h4>
-                    <span class="total__money total__money-expenses">$&nbsp;0</span>
+                    <span id="expenses" class="total__money total__money-expenses">$&nbsp;0</span>
                 </div>
             </div>
         </section>
 
         <section class="history">
             <h3>History</h3>
-            <ul>
+            <ul id="history">
                 <li class="history__item history__item-plus">
-                    <span>Salary</span>
+                    Salary
                     <span>$ +300</span>
                     <button class="history__delete">x</button>
                 </li>
@@ -48,12 +48,14 @@
 
         <section class="operation">
             <h3>New operation</h3>
-            <form>
-                <input type="text" class="operation__field" placeholder="Operation name" />
-                <input type="number" class="operation__field" placeholder="Enter amount" />
+            <form id="form">
+                <input id="operation" type="text" class="operation__field" placeholder="Operation name" />
+                <input id="amount" type="number" class="operation__field" placeholder="Enter amount" />
                 <button type="submit" class="operation__add">Add</button>
             </form>
         </section>
     </main>
+
+    <script src="js/wallet.js"></script>
 </body>
 </html>
