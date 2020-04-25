@@ -28,10 +28,13 @@
         rootElem.append(listItem);
     };
 
-    const init = () => {
+    const init = (history) => {
         historyElem.textContent = '';
+
+        for (let i = 0; i < history.length; i++) {
+            renderOperation(historyElem, history[i]);
+        }
     };
 
-    init();
-    renderOperation(historyElem, dbHistory[0]);
+    init(dbHistory);
 })();
