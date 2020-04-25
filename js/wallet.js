@@ -28,11 +28,25 @@
         rootElem.append(listItem);
     };
 
+    const updateBalance = (list) => {
+        const income = list
+            .filter(item => item.amount > 0)
+            .reduce((sum, item) => sum + item.amount, 0);
+        const expenses = list
+            .filter(item => item.amount < 0)
+            .reduce((sum, item) => sum - item.amount, 0);
+
+        balanceElem.textContent = income - expenses;
+        incomeElem.textContent = income;
+        expensesElem.textContent = expenses;
+    };
+
     const init = (rootElem, list) => {
         rootElem.textContent = '';
         list.forEach(item => {
             renderOperation(rootElem, item);
         });
+        updateBalance(list);
     };
 
     init(historyElem, dbHistory);
