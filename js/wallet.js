@@ -14,4 +14,23 @@
         {id: 4, desc: 'Freelance', amount: 100},
         {id: 5, desc: 'Books', amount: -40}
     ];
+
+    const renderOperation = (rootElem) => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('history__item');
+        listItem.innerHTML = `
+            <span>Salary</span>
+            <span>$ 1000</span>
+            <button class="history__delete">x</button>
+        `;
+
+        rootElem.append(listItem);
+    };
+
+    const init = () => {
+        historyElem.textContent = '';
+    };
+
+    init();
+    renderOperation(historyElem);
 })();
