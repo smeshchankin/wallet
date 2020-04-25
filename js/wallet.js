@@ -15,12 +15,13 @@
         {id: 5, desc: 'Books', amount: -40}
     ];
 
-    const renderOperation = (rootElem) => {
+    const renderOperation = (rootElem, op) => {
         const listItem = document.createElement('li');
         listItem.classList.add('history__item');
+        listItem.classList.add('history__item-' + (op.amount < 0 ? 'minus' : 'plus'));
         listItem.innerHTML = `
-            <span>Salary</span>
-            <span>$ 1000</span>
+            <span>${op.desc}</span>
+            <span>$ ${op.amount}</span>
             <button class="history__delete">x</button>
         `;
 
@@ -32,5 +33,5 @@
     };
 
     init();
-    renderOperation(historyElem);
+    renderOperation(historyElem, dbHistory[0]);
 })();
