@@ -3,7 +3,6 @@
 html {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     background-color: #f9f9f9;
@@ -16,7 +15,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 h1, h2, h3, h4, span {
     padding: 0;
     margin: 0;
@@ -25,10 +23,19 @@ h1, h2, h3, h4, span {
 h1, h2, h3 {
     line-height: 1.5;
 }
+h4 {
+    text-transform: uppercase;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .container {
     margin: 0 auto;
     margin-top: 30px;
-    width: 250px;
+    width: 600px;
 }
 
 .total {
@@ -66,7 +73,7 @@ h1, h2, h3 {
 .total__money-income {
     color: darkgreen;
 }
-.total__money-expense {
+.total__money-expenses {
     color: tomato;
 }
 
@@ -107,4 +114,43 @@ h1, h2, h3 {
 }
 .history__item:hover .history__delete {
     opacity: 1;
+}
+
+.operation {
+    margin: 40px 0;
+    background-color: #ddd;
+    border-radius: 25px;
+    padding: 15px 15px;
+}
+.operation__field {
+    text-indent: 15px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding:  10px 0;
+    margin: 5px 0;
+    font-size: 16px;
+    width: 100%;
+    outline: transparent;
+}
+.operation__field:focus {
+    border: 1px solid darkorange;
+}
+.operation__add {
+    background-color: darkorange;
+    border-width: 2px;
+    border-style: solid;
+    border-color: darkorange;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 0;
+    width: 100%;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.operation__add:hover {
+    background-color: white;
+    color: darkorange;
 }

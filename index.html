@@ -9,7 +9,7 @@
 <body>
     <head>
         <h1>Wallet</h1>
-        <h2>Income and Expense Calculator</h2>
+        <h2>Income and Expenses Calculator</h2>
     </head>
 
     <main class="container">
@@ -24,8 +24,8 @@
                     <span class="total__money total__money-income">$&nbsp;0</span>
                 </div>
                 <div class="total__main-item">
-                    <h4>Expense</h4>
-                    <span class="total__money total__money-expense">$&nbsp;0</span>
+                    <h4>Expenses</h4>
+                    <span class="total__money total__money-expenses">$&nbsp;0</span>
                 </div>
             </div>
         </section>
@@ -44,6 +44,15 @@
                     <button class="history__delete">x</button>
                 </li>
             </ul>
+        </section>
+
+        <section class="operation">
+            <h3>New operation</h3>
+            <form>
+                <input type="text" class="operation__field" placeholder="Operation name" />
+                <input type="number" class="operation__field" placeholder="Enter amount" />
+                <button type="submit" class="operation__add">Add</button>
+            </form>
         </section>
     </main>
 </body>
