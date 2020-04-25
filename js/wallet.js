@@ -1,4 +1,4 @@
-(function() {
+(() => {
     const balanceElem = document.getElementById('balance');
     const incomeElem = document.getElementById('income');
     const expensesElem = document.getElementById('expenses');
@@ -28,13 +28,12 @@
         rootElem.append(listItem);
     };
 
-    const init = (history) => {
-        historyElem.textContent = '';
-
-        for (let i = 0; i < history.length; i++) {
-            renderOperation(historyElem, history[i]);
-        }
+    const init = (rootElem, list) => {
+        rootElem.textContent = '';
+        list.forEach(item => {
+            renderOperation(rootElem, item);
+        });
     };
 
-    init(dbHistory);
+    init(historyElem, dbHistory);
 })();
