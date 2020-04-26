@@ -52,6 +52,7 @@
 
             operationElem.value = '';
             amountElem.value = '';
+            operationElem.focus();
         } else {
             if (!opName) {
                 operationElem.style.borderColor = 'red';
@@ -82,6 +83,7 @@
 
     formElem.addEventListener('submit', addOperation);
     historyElem.addEventListener('click', deleteOperation);
+    operationElem.focus();
 
     init(historyElem, dbHistory);
 })();
