@@ -46,11 +46,23 @@
 
         const opName = operationElem.value;
         const opValue = amountElem.value;
+        operationElem.style.borderColor = '';
+        amountElem.style.borderColor = '';
 
         if (opName && opValue) {
             const op = {id: 0, desc: opName, amount: +opValue};
             dbHistory.push(op);
             init(historyElem, dbHistory);
+
+            operationElem.value = '';
+            amountElem.value = '';
+        } else {
+            if (!opName) {
+                operationElem.style.borderColor = 'red';
+            }
+            if (!opValue) {
+                amountElem.style.borderColor = 'red';
+            }
         }
     };
 
