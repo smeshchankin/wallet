@@ -17,7 +17,7 @@
         listItem.classList.add('history__item-' + (op.amount < 0 ? 'minus' : 'plus'));
         listItem.innerHTML = `
             <span>${op.desc}</span>
-            <span>$ ${op.amount}</span>
+            <span class="history__money">$ ${op.amount}</span>
             <button data-id="${op.id}" class="history__delete">x</button>
         `;
 

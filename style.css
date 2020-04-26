@@ -102,6 +102,11 @@ ul {
     border-left-color:  tomato;
     border-right-color: tomato;
 }
+.history__money{
+    flex: 1;
+    text-align: right;
+    padding-right: 10px;
+}
 .history__delete {
     background-color: transparent;
     color: red;
