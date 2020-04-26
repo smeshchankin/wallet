@@ -7,8 +7,7 @@
     const operationElem = document.getElementById('operation');
     const amountElem = document.getElementById('amount');
 
-    let dbHistory = [
-    ];
+    let dbHistory = JSON.parse(localStorage.getItem('wallet-online.history')) || [];
 
     const generateId = () => `uin_${Math.round(Math.random()*1e8).toString(16)}`;
 
@@ -78,6 +77,7 @@
             renderOperation(rootElem, item);
         });
         updateBalance(list);
+        localStorage.setItem('wallet-online.history', JSON.stringify(list));
     };
 
     formElem.addEventListener('submit', addOperation);
