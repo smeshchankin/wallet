@@ -7,12 +7,7 @@
     const operationElem = document.getElementById('operation');
     const amountElem = document.getElementById('amount');
 
-    const dbHistory = [
-        {id: 1, desc: 'Salary', amount: 300},
-        {id: 2, desc: 'Food', amount: -80},
-        {id: 3, desc: 'Cinema', amount: -50},
-        {id: 4, desc: 'Freelance', amount: 100},
-        {id: 5, desc: 'Books', amount: -40}
+    let dbHistory = [
     ];
 
     const generateId = () => `uin_${Math.round(Math.random()*1e8).toString(16)}`;
@@ -24,7 +19,7 @@
         listItem.innerHTML = `
             <span>${op.desc}</span>
             <span>$ ${op.amount}</span>
-            <button class="history__delete">x</button>
+            <button data-id="${op.id}" class="history__delete">x</button>
         `;
 
         rootElem.append(listItem);
@@ -68,6 +63,15 @@
         }
     };
 
+    const deleteOperation = (event) => {
+        const target = event.target;
+        if (target.classList.contains('history__delete')) {
+            dbHistory = dbHistory
+                .filter(operation => operation.id !== target.dataset.id);
+            init(historyElem, dbHistory);
+        }
+    };
+
     const init = (rootElem, list) => {
         rootElem.textContent = '';
         list.forEach(item => {
@@ -77,6 +81,7 @@
     };
 
     formElem.addEventListener('submit', addOperation);
+    historyElem.addEventListener('click', deleteOperation);
 
     init(historyElem, dbHistory);
 })();
