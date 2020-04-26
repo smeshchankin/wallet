@@ -36,9 +36,9 @@
             .filter(item => item.amount < 0)
             .reduce((sum, item) => sum - item.amount, 0);
 
-        balanceElem.textContent = income - expenses;
-        incomeElem.textContent = income;
-        expensesElem.textContent = expenses;
+        balanceElem.textContent = '$ ' + (income - expenses);
+        incomeElem.textContent = '$ ' + income;
+        expensesElem.textContent = '$ ' + expenses;
     };
 
     const init = (rootElem, list) => {
