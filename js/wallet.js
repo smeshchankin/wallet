@@ -15,6 +15,8 @@
         {id: 5, desc: 'Books', amount: -40}
     ];
 
+    const generateId = () => `uin_${Math.round(Math.random()*1e8).toString(16)}`;
+
     const renderOperation = (rootElem, op) => {
         const listItem = document.createElement('li');
         listItem.classList.add('history__item');
@@ -50,7 +52,7 @@
         amountElem.style.borderColor = '';
 
         if (opName && opValue) {
-            const op = {id: 0, desc: opName, amount: +opValue};
+            const op = {id: generateId(), desc: opName, amount: +opValue};
             dbHistory.push(op);
             init(historyElem, dbHistory);
 
