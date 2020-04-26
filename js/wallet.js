@@ -41,6 +41,19 @@
         expensesElem.textContent = '$ ' + expenses;
     };
 
+    const addOperation = (event) => {
+        event.preventDefault();
+
+        const opName = operationElem.value;
+        const opValue = amountElem.value;
+
+        if (opName && opValue) {
+            const op = {id: 0, desc: opName, amount: +opValue};
+            dbHistory.push(op);
+            init(historyElem, dbHistory);
+        }
+    };
+
     const init = (rootElem, list) => {
         rootElem.textContent = '';
         list.forEach(item => {
@@ -48,6 +61,8 @@
         });
         updateBalance(list);
     };
+
+    formElem.addEventListener('submit', addOperation);
 
     init(historyElem, dbHistory);
 })();
